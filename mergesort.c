@@ -17,7 +17,7 @@ void Merge(int S[], int low, int mid, int high)
         }
         else
         {
-            U[k] = S[i];
+            U[k] = S[j];
             j++;
         }
         k++;
@@ -25,7 +25,7 @@ void Merge(int S[], int low, int mid, int high)
 
     if (i > mid)
     {
-        for (int l =j; l<=mid; l++){
+        for (int l =j; l<=high; l++){
             U[k++] = S[i];
         }
     }
@@ -56,13 +56,13 @@ void MergeSort(int S[], int low, int high)
 
 int main(void)
 {
-    int S[10] = {4, 3, 5, 2, 8, 1, 9, 7, 0, 6};
+    int S[8] = {27, 10, 12, 20, 25, 13, 15, 22};
 
-    MergeSort(S, 0, 9);
+    MergeSort(S, 0, 7);
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 8; i++)
     {
-        printf("%d ", i);
+        printf("%d ", S[i]);
     }
 
     return 0;

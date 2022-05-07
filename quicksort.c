@@ -8,11 +8,20 @@ void Swap(int *x, int *y) {
     *y = tmp;
 }
 
-int Partition(int S[], int low, int high)
+void Partition(int S[], int low, int high, int *pivotpoint)
 {
     int i, j;
-    
-    return 0;
+    int pivotitem = S[low];
+    j = low;
+
+    for(i = low + 1; i <= high; i++) {
+        if(S[i] < pivotitem){
+            j++;
+            Swap(&S[i], &S[j]);
+        }
+    }
+    *pivotpoint = j;
+    Swap(&S[low], &S[j]);
 }
 
 void QuickSort(int S[], int low, int high)
@@ -21,7 +30,7 @@ void QuickSort(int S[], int low, int high)
 
     if (high > low)
     {
-        pivotpoint = Partition(S, low, high);
+        Partition(S, low, high, &pivotpoint);
         QuickSort(S, low, pivotpoint - 1);
         QuickSort(S, pivotpoint + 1, high);
     }
@@ -29,14 +38,13 @@ void QuickSort(int S[], int low, int high)
 
 int main(void)
 {
-        
-    int S[10] = {4, 3, 5, 2, 7, 1, 9, 8, 0, 6};
+    int S[8] = {15, 22, 13, 27, 12, 10, 20, 25};
+    
+    QuickSort(S, 0, 7);
 
-    QuickSort(S, 0, 9);
-
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 8; i++)
     {
-        printf("%d ", i);
+        printf("%d ", S[i]);
     }
 
     return 0;

@@ -56,8 +56,7 @@ void MergeSort(int S[], int low, int high)
 
 int main(void)
 {
-    
-    int S[10] = {4, 3, 5, 2, 7, 1, 9, 8, 0, 6};
+    int S[10] = {4, 3, 5, 2, 8, 1, 9, 7, 0, 6};
 
     MergeSort(S, 0, 9);
 

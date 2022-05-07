@@ -1,5 +1,4 @@
 #include <stdio.h>
-#define MAX_SIZE 10;
 
 void Merge(int S[], int low, int mid, int high)
 {
@@ -26,7 +25,7 @@ void Merge(int S[], int low, int mid, int high)
     if (i > mid)
     {
         for (int l =j; l<=high; l++){
-            U[k++] = S[i];
+            U[k++] = S[l];
         }
     }
     else
